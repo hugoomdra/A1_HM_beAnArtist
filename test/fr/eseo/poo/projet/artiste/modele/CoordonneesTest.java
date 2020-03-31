@@ -187,6 +187,7 @@ public class CoordonneesTest {
 	@Test
 	public void testToString() {
 
+		
 	}
 
 }
