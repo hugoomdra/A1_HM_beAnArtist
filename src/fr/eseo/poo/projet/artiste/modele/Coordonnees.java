@@ -1,7 +1,9 @@
 package fr.eseo.poo.projet.artiste.modele;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
+
 public class Coordonnees {
 
 	public static final double ABSCISSE_PAR_DEFAUT = 0;
@@ -41,9 +43,9 @@ public class Coordonnees {
 	 * @param abscisse La nouvelles abscisse de la coordonnees.
 	 * @param ordonnee La nouvelles ordonnees de la coordonnees.
 	 */
-	public void deplacerVers(double abscisse, double ordonnee) {
-		this.setAbscisse(abscisse);
-		this.setOrdonnee(ordonnee);
+	public void deplacerVers(double nouvelleAbscisse, double nouvelleOrdonnee) {
+		this.setAbscisse(nouvelleAbscisse);
+		this.setOrdonnee(nouvelleOrdonnee);
 	}
 
 	/**
@@ -66,8 +68,8 @@ public class Coordonnees {
 	 * @return la distance entre la coordonnées et la coordonnée donnée en argument
 	 */
 	public double distanceVers(Coordonnees coord) {
-		return (Math.sqrt(Math.pow(coord.getAbscisse() - this.getAbscisse(), 2)
-				+ Math.pow(coord.getOrdonnee() - this.getOrdonnee(), 2)));
+		return  (double) Math.round((Math.sqrt(Math.pow(coord.getAbscisse() - this.getAbscisse(), 2)
+				+ Math.pow(coord.getOrdonnee() - this.getOrdonnee(), 2))) * 1000) / 1000;
 	}
 
 	/**
@@ -78,8 +80,8 @@ public class Coordonnees {
 	 * @return l'angle entre la coordonnées et la coordonnée donnée en argument
 	 */
 	public double angleVers(Coordonnees coord) {
-		return Math.toDegrees(Math.atan(Math.abs(coord.getOrdonnee() - this.getOrdonnee())
-				/ Math.abs(coord.getAbscisse() - this.getAbscisse())));
+		return (double) Math.round(Math.atan(Math.abs(coord.getOrdonnee() - this.getOrdonnee())
+				/ Math.abs(coord.getAbscisse() - this.getAbscisse())) * 1000) / 1000;
 	}
 
 	@Override
