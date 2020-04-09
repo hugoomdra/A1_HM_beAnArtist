@@ -3,7 +3,7 @@
 BluesBusinessMan est un projet réalisé dans le cadre d'une formation d'ingénieur.
 Il fera l'objet d'une évaluation au semestre 6.
 
-**Blue est un projet réalisé par [Germain ADAM](https://www.linkedin.com/in/germain-adam-543a26173/) et [Hugo MADUREIRA](https://www.linkedin.com/in/hugo-madureira/).**
+**BluesBusinessMan est un projet réalisé par [Hugo MADUREIRA](https://www.linkedin.com/in/hugo-madureira/).**
 
 
 # Sommaire
@@ -16,7 +16,7 @@ Il fera l'objet d'une évaluation au semestre 6.
 
 ## Liens importants
 
-* [Lien du PDF](https://campus.eseo.fr/pluginfile.php/127935/mod_resource/content/3/beAnArtist.pdf)
+* [Lien du PDF](https://campus.eseo.fr/pluginfile.php/127935/mod_resource/content/3/beAnArtist.pdf) *(ATTENTION, le document PDF est disponible uniquement pour les membres de l'ESEO.*
 
 ## Introduction
 
