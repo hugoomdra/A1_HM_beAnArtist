@@ -80,8 +80,19 @@ public class Coordonnees {
 	 * @return l'angle entre la coordonnées et la coordonnée donnée en argument
 	 */
 	public double angleVers(Coordonnees coord) {
-		return (double) Math.round(Math.atan(Math.abs(coord.getOrdonnee() - this.getOrdonnee())
-				/ Math.abs(coord.getAbscisse() - this.getAbscisse())) * 1000) / 1000;
+		double res = Math.atan(Math.abs(coord.getOrdonnee() - this.getOrdonnee())
+				/ Math.abs(coord.getAbscisse() - this.getAbscisse()));
+		
+		if(coord.getAbscisse() < this.getAbscisse()) {
+			res = Math.PI - res;
+		}
+		
+		if(coord.getOrdonnee() < this.getOrdonnee()) {
+			res = -res;
+		}
+		
+		
+		return res;
 	}
 
 	@Override

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class CoordonneesTest {
 
-	double EPSILON = 1e-7d;
+	double EPSILON = 1e-3d;
 
 	@Test
 	public void constructeur1() {
