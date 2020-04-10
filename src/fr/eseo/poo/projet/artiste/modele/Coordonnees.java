@@ -99,8 +99,9 @@ public class Coordonnees {
 	public String toString() {
 		NumberFormat nf = NumberFormat.getNumberInstance(Locale.getDefault());
 		DecimalFormat df = (DecimalFormat) nf;
-		df.applyPattern("##.##");
+		df.applyPattern("#.0#");
 		return "(" + df.format(this.getAbscisse()) + " , " + df.format(this.getOrdonnee()) + ")";
 	}
 
 }
+

@@ -2,11 +2,13 @@ package fr.eseo.poo.projet.artiste.modele;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Locale;
+
 import org.junit.Test;
 
 public class CoordonneesTest {
 
-	double EPSILON = 1e-3d;
+	private static final double EPSILON = 1e-3d;
 
 	@Test
 	public void constructeur1() {
@@ -133,6 +135,14 @@ public class CoordonneesTest {
 
 		assertEquals(0.588, coord.angleVers(coordComparator), EPSILON);
 	}
+	
+	@Test
+	public void angleVersGauche() {
+		Coordonnees coord = new Coordonnees();
+		Coordonnees coordComparator = new Coordonnees(-6, 4);
+
+		assertEquals(2.554, coord.angleVers(coordComparator), EPSILON);
+	}
 
 	@Test
 	public void distanceVersHaut() {
@@ -183,11 +193,15 @@ public class CoordonneesTest {
 		assertEquals(7.211, coord.distanceVers(coordComparator), EPSILON);
 
 	}
-
+	
 	@Test
 	public void testToString() {
-
-		
+		assertEquals("(15,0 , 15,6)", new Coordonnees(15.0, 15.6).toString());
+		assertEquals("(15,56 , 15,67)", new Coordonnees(15.56, 15.67).toString());
+		Locale.setDefault(Locale.ENGLISH);
+		assertEquals("(15.0 , 15.6)", new Coordonnees(15.0, 15.6).toString());
+		assertEquals("(15.56 , 15.67)", new Coordonnees(15.56, 15.67).toString());
 	}
+
 
 }
