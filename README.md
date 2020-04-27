@@ -27,11 +27,11 @@ Description, blablabla
 
 ## Roadmap
 
-- [ ] Préparation
+- [x] Préparation
 - [ ] Le modèle
-  * [ ] Définir la classe Coordonnees
-  * [ ] Vérifier la classe Cooronnees
-  * [ ] Définir la classe abstraite Forme
+  * [x] Définir la classe Coordonnees
+  * [x] Vérifier la classe Cooronnees
+  * [x] Définir la classe abstraite Forme
   * [ ] Définir des lignes
   * [ ] Vérifier que tout fonctionne
   * [ ] Définir des ellipses et des cercles
