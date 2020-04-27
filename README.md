@@ -25,3 +25,20 @@ Dans le cadre de notre cursus d'ingénieur, blablabla.
 
 Description, blablabla
 
+## Roadmap
+
+- [ ] Préparation
+- [ ] Le modèle
+  * [ ] Définir la classe Coordonnees
+  * [ ] Vérifier la classe Cooronnees
+  * [ ] Définir la classe abstraite Forme
+  * [ ] Définir des lignes
+  * [ ] Vérifier que tout fonctionne
+  * [ ] Définir des ellipses et des cercles
+  * [ ] Vérifier que tout fonctionne
+  * [ ] Ajouter les méthodes contient
+  * [ ] Vérifier que tout fonctionne
+- [ ] La vue
+  * [ ] ...
+
+
