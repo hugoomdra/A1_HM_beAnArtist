@@ -46,18 +46,48 @@ public class Ligne extends Forme{
 		
 	}
 	
+	@Override
+	public double getCadreMinX() {
+		return getLargeur() < 0 ? getPosition().getAbscisse() + getLargeur() : getPosition().getAbscisse();
+	}
+	
+	@Override
+	public double getCadreMinY() {
+		
+		return getHauteur() < 0 ? getPosition().getOrdonnee() + getHauteur() : getPosition().getOrdonnee();
+	}
+	
+	@Override
+	public double getCadreMaxX() {
+		return getLargeur() < 0 ? getPosition().getAbscisse() : getPosition().getAbscisse() + getLargeur();
+	}
+	
+	@Override
+	public double getCadreMaxY() {
+		return getHauteur() < 0 ? getPosition().getOrdonnee() : getPosition().getOrdonnee() + getHauteur();
+	}
+	
+	public double getAngleDegree() {
+		System.out.println(getC1().angleVers(getC2()));
+		double deg = 360 / (2 * Math.PI) * getC1().angleVers(getC2());
+		if (deg < 0) {
+			deg = 360 + deg;
+		}
+		return deg;
+		//		return 180 * getC1().angleVers(getC2()) / Math.PI;
+	}
 	
 	@Override
 	public String toString() {
 		
 		NumberFormat nf = NumberFormat.getNumberInstance(Locale.getDefault());
 		DecimalFormat df = (DecimalFormat) nf;
-		df.applyPattern("#.0#");
+		df.applyPattern("#0.0#");
 		
 		String c1 = "c1 : (" + df.format(getC1().getAbscisse()) + " , " + df.format(getC1().getOrdonnee()) + ") ";
 		String c2 = "c2 : (" + df.format(getC2().getAbscisse()) + " , " + df.format(getC2().getOrdonnee()) + ") ";
 		String longueur = "longueur : " + df.format(perimetre()) + " ";
-		String angle = "angle : " + df.format(180 * getC1().angleVers(getC2()) / Math.PI) + "°";
+		String angle = "angle : " + df.format(getAngleDegree()) + "°";
 		return "[Ligne] " + c1 + c2 + longueur + angle;
 	}
 
