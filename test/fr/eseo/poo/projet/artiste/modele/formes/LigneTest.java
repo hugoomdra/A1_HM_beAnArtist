@@ -122,16 +122,18 @@ public class LigneTest {
 		assertEquals("[Ligne] c1 : (10,0 , 10,0) c2 : (5,0 , 30,0) longueur : 20,62 angle : 104,04°", laLigne.toString());
 		Locale.setDefault(Locale.ENGLISH);
 		assertEquals("[Ligne] c1 : (10.0 , 10.0) c2 : (5.0 , 30.0) longueur : 20.62 angle : 104.04°", laLigne.toString());
+		Locale.setDefault(Locale.FRENCH);
 	}
 	
 	@Test
 	public void testPage54() {
 		Ligne laLignePage54 = new Ligne(new Coordonnees(77, 177), 156, -100);
-		
 		assertEquals(77, laLignePage54.getCadreMinX(), EPSILON);
 		assertEquals(77, laLignePage54.getCadreMinY(), EPSILON);
+		assertEquals(233, laLignePage54.getCadreMaxX(), EPSILON);
+		assertEquals(177, laLignePage54.getCadreMaxY(), EPSILON);
 		
-		//assertEquals("[Ligne] c1 : (77,0 , 177,0) c2 : (233,0 , 77,0) longueur : 185,3 angle : 327,34°", laLignePage54.toString() );
+		assertEquals("[Ligne] c1 : (77,0 , 177,0) c2 : (233,0 , 77,0) longueur : 185,3 angle : 327,34°", laLignePage54.toString() );
 	
 	}
 	
