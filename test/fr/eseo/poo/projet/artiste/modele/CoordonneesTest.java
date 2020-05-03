@@ -201,6 +201,7 @@ public class CoordonneesTest {
 		Locale.setDefault(Locale.ENGLISH);
 		assertEquals("(15.0 , 15.6)", new Coordonnees(15.0, 15.6).toString());
 		assertEquals("(15.56 , 15.67)", new Coordonnees(15.56, 15.67).toString());
+		Locale.setDefault(Locale.FRENCH);
 	}
 
 
