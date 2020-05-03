@@ -32,8 +32,8 @@ Description, blablabla
   * [x] Définir la classe Coordonnees
   * [x] Vérifier la classe Cooronnees
   * [x] Définir la classe abstraite Forme
-  * [ ] Définir des lignes
-  * [ ] Vérifier que tout fonctionne
+  * [x] Définir des lignes
+  * [x] Vérifier que tout fonctionne
   * [ ] Définir des ellipses et des cercles
   * [ ] Vérifier que tout fonctionne
   * [ ] Ajouter les méthodes contient
