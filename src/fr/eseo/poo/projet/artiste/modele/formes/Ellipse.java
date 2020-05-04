@@ -44,7 +44,7 @@ public class Ellipse extends Forme{
 		String dim = "dim " + df.format(getLargeur()) +" x " + df.format(getHauteur());
 		String perimetre = "périmètre : " + df.format(perimetre());
 		String aire = "aire : " + df.format(aire());
-		return "[Ellipse] : " + pos + " " + dim + " " + perimetre + " " + aire;
+		return "["+ this.getClass().getSimpleName() +"] : " + pos + " " + dim + " " + perimetre + " " + aire;
 	}
 
 	@Override
