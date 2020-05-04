@@ -103,5 +103,24 @@ public class Coordonnees {
 		return "(" + df.format(this.getAbscisse()) + " , " + df.format(this.getOrdonnee()) + ")";
 	}
 
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Coordonnees other = (Coordonnees) obj;
+		if (Double.doubleToLongBits(abscisse) != Double.doubleToLongBits(other.abscisse))
+			return false;
+		if (Double.doubleToLongBits(ordonnee) != Double.doubleToLongBits(other.ordonnee))
+			return false;
+		return true;
+	}
+	
+	
+
 }
 
