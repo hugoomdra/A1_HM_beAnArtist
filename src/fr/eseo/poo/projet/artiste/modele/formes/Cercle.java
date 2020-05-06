@@ -22,13 +22,19 @@ public class Cercle extends Ellipse{
 	}
 	
 	@Override
-	public void setHauteur(double hauteur) {
+	public void setHauteur(double hauteur) throws IllegalArgumentException {
+		if(hauteur < 0) {
+			throw new IllegalArgumentException();
+		}
 		super.setHauteur(hauteur);
 		super.setLargeur(hauteur);
 	}
 	
 	@Override
-	public void setLargeur(double largeur) {
+	public void setLargeur(double largeur) throws IllegalArgumentException {
+		if(largeur < 0) {
+			throw new IllegalArgumentException();
+		}
 		super.setLargeur(largeur);
 		super.setHauteur(largeur);
 	}

@@ -1,6 +1,6 @@
 package fr.eseo.poo.projet.artiste.modele.formes;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Locale;
 
@@ -94,6 +94,24 @@ public class EllipseTest {
 		Locale.setDefault(Locale.FRENCH);
 	
 	
+	}
+	
+	@Test
+	public void testContient() {
+		Ellipse ellipse = new Ellipse(new Coordonnees(1, 2), 5, 4);
+		
+		Coordonnees coordB = new Coordonnees(3.52, 2.02);
+		Coordonnees coordC = new Coordonnees(2, 4);
+		Coordonnees coordD = new Coordonnees(7, 8);
+		Coordonnees coordE = new Coordonnees(5, 4);
+
+		
+		assertEquals(true, ellipse.contient(coordB));
+		assertEquals(true, ellipse.contient(coordC));
+		assertEquals(false, ellipse.contient(coordD));
+		assertEquals(true, ellipse.contient(coordE));
+		
+		
 	}
 
 }

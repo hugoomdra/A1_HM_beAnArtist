@@ -8,6 +8,7 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 
 public class Ligne extends Forme{
 
+	public static final double EPSILON = 1e-3d;
 	
 	public Ligne() {
 		super();
@@ -100,6 +101,12 @@ public class Ligne extends Forme{
 	public double perimetre() {
 		// TODO Auto-generated method stub
 		return getC1().distanceVers(getC2());
+	}
+	
+	@Override
+	public boolean contient(Coordonnees coordonnees) {
+		
+		return getC1().distanceVers(coordonnees) + coordonnees.distanceVers(getC2()) - getC1().distanceVers(getC2()) < EPSILON;
 	}
 
 }

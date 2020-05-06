@@ -12,7 +12,7 @@ public class Ellipse extends Forme{
 		this(new Coordonnees(), LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT);
 	}
 	
-	public Ellipse(double largeur, double hauteur) {
+	public Ellipse(double largeur, double hauteur){
 		this(new Coordonnees(), largeur, hauteur);
 	}
 	
@@ -27,11 +27,18 @@ public class Ellipse extends Forme{
 	}
 	
 	@Override
-	public void setHauteur(double hauteur) {
+	public void setHauteur(double hauteur) throws IllegalArgumentException{
+		if(hauteur < 0) {
+			throw new IllegalArgumentException();
+		}
 		super.setHauteur(hauteur);
 	}
 	
-	public void setLargeur(double largeur) {
+	@Override
+	public void setLargeur(double largeur) throws IllegalArgumentException {
+		if(largeur < 0) {
+			throw new IllegalArgumentException();
+		}
 		super.setLargeur(largeur);
 	}
 	
@@ -62,6 +69,28 @@ public class Ellipse extends Forme{
 		
 		double perimetre = Math.PI * (petitRayon + grandRayon) * (1 + ((3 * h)/(10 + Math.sqrt(4 - 3 * h))));
 		return perimetre;
+	}
+	
+	@Override
+	public boolean contient(Coordonnees coordonnees) {
+		
+		/*
+		 * J'ai récupéré la formule sur ce site :
+		 * https://math.stackexchange.com/questions/76457/check-if-a-point-is-within-an-ellipse
+		 */
+		
+		double petitRayon = (getHauteur() /2) < (getLargeur() /2) ? (getHauteur() /2) : (getLargeur() /2);
+		double grandRayon = (getHauteur() /2) < (getLargeur() /2) ? (getLargeur() /2) : (getHauteur() /2);
+		
+		double abscisse = (Math.pow(coordonnees.getAbscisse() - getCentre().getAbscisse() , 2) / Math.pow(grandRayon, 2));
+		double ordonnee = (Math.pow(coordonnees.getOrdonnee() - getCentre().getOrdonnee(), 2) / Math.pow(petitRayon, 2));
+			
+		return abscisse + ordonnee <= 1;
+	}
+	
+	public Coordonnees getCentre() {
+
+		return new Coordonnees(getPosition().getAbscisse() + (getLargeur() / 2), getPosition().getOrdonnee() + (getHauteur() / 2));
 	}
 	
 

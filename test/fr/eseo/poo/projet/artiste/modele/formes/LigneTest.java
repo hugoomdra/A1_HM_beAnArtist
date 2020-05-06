@@ -1,6 +1,6 @@
 package fr.eseo.poo.projet.artiste.modele.formes;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Locale;
 
@@ -126,7 +126,7 @@ public class LigneTest {
 	}
 	
 	@Test
-	public void testPage54() {
+	public void testPdf() {
 		Ligne laLignePage54 = new Ligne(new Coordonnees(77, 177), 156, -100);
 		assertEquals(77, laLignePage54.getCadreMinX(), EPSILON);
 		assertEquals(77, laLignePage54.getCadreMinY(), EPSILON);
@@ -135,6 +135,18 @@ public class LigneTest {
 		
 		assertEquals("[Ligne] c1 : (77,0 , 177,0) c2 : (233,0 , 77,0) longueur : 185,3 angle : 327,34°", laLignePage54.toString() );
 	
+	}
+	
+	
+	@Test
+	public void contient() {
+		Ligne laLigne = new Ligne(new Coordonnees(2, 1));
+		
+		laLigne.setC2(new Coordonnees(23, 19));
+		assertEquals(true, laLigne.contient(new Coordonnees(9, 7)));
+		
+		laLigne.setC2(new Coordonnees(23, 40));
+		assertEquals(false, laLigne.contient(new Coordonnees(9, 7)));
 	}
 	
 
