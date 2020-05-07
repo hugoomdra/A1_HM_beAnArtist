@@ -103,20 +103,20 @@ public class CercleTest {
 	
 	@Test
 	public void contient() {
-		Cercle cercle = new Cercle(new Coordonnees(2, -8), 10);
-
-		Coordonnees coordB = new Coordonnees(7, 2);
-		Coordonnees coordC = new Coordonnees(4, -3);
-		Coordonnees coordD = new Coordonnees(2, -7);
-		Coordonnees coordE = new Coordonnees(3, -6);
-		Coordonnees coordF = new Coordonnees(12, -3);
-		Coordonnees coordG = new Coordonnees(14, -5);
+		Cercle cercle = new Cercle(new Coordonnees(9, 3), 6);
+		System.out.println(cercle.getCentre());
+		Coordonnees coordB = new Coordonnees(12, 5);
+		Coordonnees coordC = new Coordonnees(12, 3);
+		Coordonnees coordD = new Coordonnees(11, 8);
+		Coordonnees coordE = new Coordonnees(15, 6);
+		Coordonnees coordF = new Coordonnees(14, 3);
+		Coordonnees coordG = new Coordonnees(9, 10);
 		
 		assertEquals(true, cercle.contient(coordB));
 		assertEquals(true, cercle.contient(coordC));
+		assertEquals(true, cercle.contient(coordD));
 		assertEquals(true, cercle.contient(coordE));
-		assertEquals(true, cercle.contient(coordF));
-		assertEquals(false, cercle.contient(coordD));
+		assertEquals(false, cercle.contient(coordF));
 		assertEquals(false, cercle.contient(coordG));
 		
 	}

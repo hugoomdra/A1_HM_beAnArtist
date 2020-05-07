@@ -79,6 +79,8 @@ public class Ellipse extends Forme{
 		 * https://math.stackexchange.com/questions/76457/check-if-a-point-is-within-an-ellipse
 		 */
 		
+		
+		/*
 		double petitRayon = (getHauteur() /2) < (getLargeur() /2) ? (getHauteur() /2) : (getLargeur() /2);
 		double grandRayon = (getHauteur() /2) < (getLargeur() /2) ? (getLargeur() /2) : (getHauteur() /2);
 		
@@ -86,11 +88,21 @@ public class Ellipse extends Forme{
 		double ordonnee = (Math.pow(coordonnees.getOrdonnee() - getCentre().getOrdonnee(), 2) / Math.pow(petitRayon, 2));
 			
 		return abscisse + ordonnee <= 1;
+		
+		*/
+		
+		double abscisse = Math.pow(coordonnees.getAbscisse()-getCentre().getAbscisse(),2)/Math.pow(getLargeur() /2,2);
+		double ordonnee = Math.pow(coordonnees.getOrdonnee()-getCentre().getOrdonnee(),2)/Math.pow(getHauteur() /2,2);
+
+		System.out.println((abscisse + ordonnee));
+		return (abscisse + ordonnee) <= 1;
+
+		
 	}
 	
 	public Coordonnees getCentre() {
 
-		return new Coordonnees(getPosition().getAbscisse() + (getLargeur() / 2), getPosition().getOrdonnee() + (getHauteur() / 2));
+		return new Coordonnees(getPosition().getAbscisse() + (getLargeur() / 2.0), getPosition().getOrdonnee() + (getHauteur() / 2.0));
 	}
 	
 

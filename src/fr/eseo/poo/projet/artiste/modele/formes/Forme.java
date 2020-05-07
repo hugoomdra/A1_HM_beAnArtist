@@ -84,6 +84,7 @@ public abstract class Forme {
 	abstract public double perimetre();
 	
 	abstract public boolean contient(Coordonnees coordonnees);
+
 	
 	
 	
