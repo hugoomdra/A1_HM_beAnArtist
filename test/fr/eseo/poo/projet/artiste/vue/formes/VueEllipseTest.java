@@ -1,5 +1,7 @@
 package fr.eseo.poo.projet.artiste.vue.formes;
 
+import java.awt.Color;
+
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
@@ -20,6 +22,7 @@ public class VueEllipseTest {
 		Ellipse ellipse2 = new Ellipse(new Coordonnees(300, 150), 100, 80);
 		Ellipse ellipse3 = new Ellipse(new Coordonnees(200, 100), 100, 80);
 		Ellipse ellipse4 = new Ellipse(new Coordonnees(300, 100), 100, 80);
+		ellipse4.setCouleur(Color.green);
 		
 		PanneauDessin panneau = new PanneauDessin();
 		panneau.ajouterVueForme(new VueEllipse(ellipse1));

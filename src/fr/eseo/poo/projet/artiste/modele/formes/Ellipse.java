@@ -51,7 +51,21 @@ public class Ellipse extends Forme{
 		String dim = "dim " + df.format(getLargeur()) +" x " + df.format(getHauteur());
 		String perimetre = "périmètre : " + df.format(perimetre());
 		String aire = "aire : " + df.format(aire());
-		return "["+ this.getClass().getSimpleName() +"] : " + pos + " " + dim + " " + perimetre + " " + aire;
+		
+		
+		String couleur = "";
+		int rouge = getCouleur().getRed();
+        int vert = getCouleur().getGreen();
+        int bleu = getCouleur().getBlue();
+
+        if (Locale.getDefault().getLanguage().equals(new Locale("fr").getLanguage())) {
+            couleur = "couleur = R" + rouge + ",V" + vert + ",B" + bleu;
+        } else {
+        	couleur = "couleur = R" + rouge + ",G" + vert + ",B" + bleu;
+        }
+		
+		
+		return "["+ this.getClass().getSimpleName() +"] : " + pos + " " + dim + " " + perimetre + " " + aire + " " + couleur;
 	}
 
 	@Override

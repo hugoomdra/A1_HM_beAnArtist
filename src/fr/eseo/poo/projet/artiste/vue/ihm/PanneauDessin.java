@@ -10,6 +10,7 @@ import java.util.List;
 import javax.swing.JPanel;
 
 import fr.eseo.poo.projet.artiste.controleur.outils.Outil;
+import fr.eseo.poo.projet.artiste.modele.formes.Forme;
 import fr.eseo.poo.projet.artiste.vue.formes.VueForme;
 
 public class PanneauDessin extends JPanel{
@@ -18,16 +19,20 @@ public class PanneauDessin extends JPanel{
 	public static final int HAUTEUR_PAR_DEFAUT = 480;
 	public static final Color COULEUR_FOND_PAR_DEFAUT = Color.white;
 	private Outil outilCourant;
+	private Color couleurCourante;
 	
 	private final List<VueForme> vueFormes = new ArrayList<VueForme>();
 	
 	public PanneauDessin() {
 		this(LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT, COULEUR_FOND_PAR_DEFAUT);
+		
 	}
+	
 
 	public PanneauDessin(int largeur, int hauteur, Color fond) {
 		this.setPreferredSize(new Dimension(largeur, hauteur));
 		this.setBackground(fond);
+		this.setCouleurCourante(Forme.COULEUR_PAR_DEFAUT);
 	}
 	
 	public List<VueForme> getVueFormes(){
@@ -84,8 +89,13 @@ public class PanneauDessin extends JPanel{
 	private void setOutilCourant(Outil outilCourant) {
 		this.outilCourant = outilCourant;
 	}
-	
-	
-	
+
+	public Color getCouleurCourante() {
+		return couleurCourante;
+	}
+
+	public void setCouleurCourante(Color couleurCourante) {
+		this.couleurCourante = couleurCourante;
+	}	
 	
 }

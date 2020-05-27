@@ -1,15 +1,22 @@
 package fr.eseo.poo.projet.artiste.modele.formes;
 
+import java.awt.Color;
+
+import javax.swing.UIManager;
+
+import fr.eseo.poo.projet.artiste.modele.Coloriable;
 import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 
-public abstract class Forme {
+public abstract class Forme implements Coloriable{
 
 	public static final double LARGEUR_PAR_DEFAUT = 10;
 	public static final double HAUTEUR_PAR_DEFAUT = 10;
+	public static final Color COULEUR_PAR_DEFAUT = UIManager.getColor("Panel.foreground");
 	
 	private double largeur;
 	private double hauteur;
 	private Coordonnees position;
+	private Color couleur;
 	
 	public Forme() {
 		this(new Coordonnees(), LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT);
@@ -27,6 +34,7 @@ public abstract class Forme {
 		setPosition(position);
 		setLargeur(largeur);
 		setHauteur(hauteur);
+		setCouleur(COULEUR_PAR_DEFAUT);
 		
 	}
 
@@ -84,6 +92,17 @@ public abstract class Forme {
 	abstract public double perimetre();
 	
 	abstract public boolean contient(Coordonnees coordonnees);
+
+	@Override
+	public Color getCouleur() {
+		return this.couleur;
+	}
+
+	@Override
+	public void setCouleur(Color couleur) {
+		this.couleur = couleur;
+		
+	}
 
 	
 	

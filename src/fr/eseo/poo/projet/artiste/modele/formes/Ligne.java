@@ -88,8 +88,20 @@ public class Ligne extends Forme{
 		String c1 = "c1 : (" + df.format(getC1().getAbscisse()) + " , " + df.format(getC1().getOrdonnee()) + ") ";
 		String c2 = "c2 : (" + df.format(getC2().getAbscisse()) + " , " + df.format(getC2().getOrdonnee()) + ") ";
 		String longueur = "longueur : " + df.format(perimetre()) + " ";
-		String angle = "angle : " + df.format(getAngleDegree()) + "°";
-		return "[Ligne] " + c1 + c2 + longueur + angle;
+		String angle = "angle : " + df.format(getAngleDegree()) + "° ";
+		
+		String couleur = "";
+		int rouge = getCouleur().getRed();
+        int vert = getCouleur().getGreen();
+        int bleu = getCouleur().getBlue();
+
+        if (Locale.getDefault().getLanguage().equals(new Locale("fr").getLanguage())) {
+            couleur = "couleur = R" + rouge + ",V" + vert + ",B" + bleu;
+        } else {
+        	couleur = "couleur = R" + rouge + ",G" + vert + ",B" + bleu;
+        }
+
+		return "[Ligne] " + c1 + c2 + longueur + angle + couleur;
 	}
 
 	@Override

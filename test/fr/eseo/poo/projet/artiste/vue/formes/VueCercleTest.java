@@ -1,5 +1,7 @@
 package fr.eseo.poo.projet.artiste.vue.formes;
 
+import java.awt.Color;
+
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
@@ -21,12 +23,14 @@ public class VueCercleTest {
 		Cercle cercle2 = new Cercle(new Coordonnees(300, 150), 90);
 		Cercle cerlce3 = new Cercle(new Coordonnees(200, 100), 150);
 		Cercle cerlce4 = new Cercle(new Coordonnees(300, 100), 40);
+		cerlce4.setCouleur(Color.green);
 		
 		PanneauDessin panneau = new PanneauDessin();
 		panneau.ajouterVueForme(new VueEllipse(cercle1));
 		panneau.ajouterVueForme(new VueEllipse(cercle2));
 		panneau.ajouterVueForme(new VueEllipse(cerlce3));
 		panneau.ajouterVueForme(new VueEllipse(cerlce4));
+		
 		
 	
 		

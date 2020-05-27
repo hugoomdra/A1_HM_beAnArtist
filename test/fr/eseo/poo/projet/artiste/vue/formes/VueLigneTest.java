@@ -1,5 +1,7 @@
 package fr.eseo.poo.projet.artiste.vue.formes;
 
+import java.awt.Color;
+
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
@@ -20,12 +22,17 @@ public class VueLigneTest {
 		Ligne ligne2 = new Ligne(new Coordonnees(400, 200), -100, 200);
 		Ligne ligne3 = new Ligne(new Coordonnees(67, 90), 150, -100);
 		Ligne ligne4 = new Ligne(new Coordonnees(150, 100), 100, 100);
+		ligne4.setCouleur(Color.blue);
+		
+		Ligne ligne5 = new Ligne(new Coordonnees(400, 100), 100, 100);
+		ligne5.setCouleur(Color.red);
 		
 		PanneauDessin panneau = new PanneauDessin();
 		panneau.ajouterVueForme(new VueLigne(ligne1));
 		panneau.ajouterVueForme(new VueLigne(ligne2));
 		panneau.ajouterVueForme(new VueLigne(ligne3));
 		panneau.ajouterVueForme(new VueLigne(ligne4));
+		panneau.ajouterVueForme(new VueLigne(ligne5));
 	
 		
 		JFrame fenetre = new JFrame();
