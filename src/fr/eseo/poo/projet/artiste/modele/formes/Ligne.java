@@ -69,7 +69,7 @@ public class Ligne extends Forme{
 	}
 	
 	public double getAngleDegree() {
-		System.out.println(getC1().angleVers(getC2()));
+
 		double deg = 360 / (2 * Math.PI) * getC1().angleVers(getC2());
 		if (deg < 0) {
 			deg = 360 + deg;
