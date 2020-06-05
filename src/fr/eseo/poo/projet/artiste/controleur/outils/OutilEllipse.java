@@ -20,6 +20,7 @@ public class OutilEllipse extends OutilForme{
 		
 		Ellipse ellipse = new Ellipse(coord, largeur, hauteur);
 		ellipse.setCouleur(getPanneauDessin().getCouleurCourante());
+		ellipse.setRempli(getPanneauDessin().getModeRemplissage());
 		return new VueEllipse(ellipse);
 	}
 

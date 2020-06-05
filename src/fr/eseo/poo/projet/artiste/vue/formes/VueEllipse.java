@@ -12,6 +12,11 @@ public class VueEllipse extends VueForme {
 		super(ellipse);
 
 	}
+	
+	@Override
+	public Ellipse getForme() {
+		return (Ellipse) super.getForme();
+	}
 
 	@Override
 	public void affiche(Graphics2D g2d) {
@@ -27,7 +32,12 @@ public class VueEllipse extends VueForme {
 		Ellipse2D ellipse = new Ellipse2D.Double(x1, x2, width, height);
 
 		g2d.draw(ellipse);
-
+		
+		
+		if(getForme().estRempli()) {
+			g2d.fill(ellipse);
+		}
+		
 		g2d.setColor(couleurSauvegardee);
 	}
 

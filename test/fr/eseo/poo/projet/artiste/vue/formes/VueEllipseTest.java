@@ -21,6 +21,8 @@ public class VueEllipseTest {
 		Ellipse ellipse1 = new Ellipse(new Coordonnees(100, 100), 100, 80);
 		Ellipse ellipse2 = new Ellipse(new Coordonnees(300, 150), 100, 80);
 		Ellipse ellipse3 = new Ellipse(new Coordonnees(200, 100), 100, 80);
+		ellipse3.setCouleur(Color.red);
+		ellipse3.setRempli(true);
 		Ellipse ellipse4 = new Ellipse(new Coordonnees(300, 100), 100, 80);
 		ellipse4.setCouleur(Color.green);
 		

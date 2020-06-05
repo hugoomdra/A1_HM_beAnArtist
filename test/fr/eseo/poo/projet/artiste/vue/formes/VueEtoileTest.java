@@ -6,34 +6,24 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 import fr.eseo.poo.projet.artiste.modele.Coordonnees;
-import fr.eseo.poo.projet.artiste.modele.formes.Cercle;
+import fr.eseo.poo.projet.artiste.modele.formes.Etoile;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauDessin;
 
-public class VueCercleTest {
-
-	
-	public VueCercleTest() {
+public class VueEtoileTest {
+	public VueEtoileTest() {
 		testAffiche();
 	}
 	
 	
 	private void testAffiche() {
 		
-		Cercle cercle1 = new Cercle(new Coordonnees(100, 100), 100);
-		Cercle cercle2 = new Cercle(new Coordonnees(300, 150), 90);
-		Cercle cerlce3 = new Cercle(new Coordonnees(200, 100), 150);
-		cerlce3.setCouleur(Color.BLUE);
-		cerlce3.setRempli(true);
-		Cercle cerlce4 = new Cercle(new Coordonnees(300, 100), 40);
-		cerlce4.setCouleur(Color.green);
-		cerlce4.setRempli(true);
-		
+		Etoile etoile1 = new Etoile(new Coordonnees(100, 100), 120);
+		Etoile etoile2 = new Etoile(new Coordonnees(200, 200), 40, 4, 0, 0.75);
+		etoile2.setCouleur(Color.red);
+
 		PanneauDessin panneau = new PanneauDessin();
-		panneau.ajouterVueForme(new VueEllipse(cercle1));
-		panneau.ajouterVueForme(new VueEllipse(cercle2));
-		panneau.ajouterVueForme(new VueEllipse(cerlce3));
-		panneau.ajouterVueForme(new VueEllipse(cerlce4));
-		
+		panneau.ajouterVueForme(new VueEtoile(etoile1));
+		panneau.ajouterVueForme(new VueEtoile(etoile2));
 		
 	
 		
@@ -53,14 +43,10 @@ public class VueCercleTest {
 			
 			@Override
 			public void run() {
-				new VueCercleTest();
+				new VueEtoileTest();
 				
 			}
 		});
 
 	}
-	
-	
-	
-	
 }

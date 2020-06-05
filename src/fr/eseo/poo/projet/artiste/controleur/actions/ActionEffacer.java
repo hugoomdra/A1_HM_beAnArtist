@@ -29,7 +29,8 @@ public class ActionEffacer extends AbstractAction{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		int choix = JOptionPane.showConfirmDialog(getLePanneauDessin(), "Êtes-vous sûr de tous vouloir effacer", NOM_ACTION, JOptionPane.YES_NO_OPTION);
+		String p = "Êtes-vous sûr de tous vouloir effacer";
+		int choix = JOptionPane.showConfirmDialog(getLePanneauDessin(), p, NOM_ACTION, JOptionPane.YES_NO_OPTION);
 		
 		if(choix == 0) {
 			lePanneauDessin.getVueFormes().clear();

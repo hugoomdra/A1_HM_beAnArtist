@@ -52,6 +52,7 @@ public class OutilCercle extends OutilForme {
 		
 		Cercle cercle = new Cercle(coord, cote);
 		cercle.setCouleur(getPanneauDessin().getCouleurCourante());
+		cercle.setRempli(getPanneauDessin().getModeRemplissage());
 		return new VueCercle(cercle);
 	}
 

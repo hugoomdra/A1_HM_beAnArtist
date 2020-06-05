@@ -20,6 +20,7 @@ public class PanneauDessin extends JPanel{
 	public static final Color COULEUR_FOND_PAR_DEFAUT = Color.white;
 	private Outil outilCourant;
 	private Color couleurCourante;
+	private boolean modeRemplissage;
 	
 	private final List<VueForme> vueFormes = new ArrayList<VueForme>();
 	
@@ -33,6 +34,7 @@ public class PanneauDessin extends JPanel{
 		this.setPreferredSize(new Dimension(largeur, hauteur));
 		this.setBackground(fond);
 		this.setCouleurCourante(Forme.COULEUR_PAR_DEFAUT);
+		this.setModeRemplissage(false);
 	}
 	
 	public List<VueForme> getVueFormes(){
@@ -42,6 +44,7 @@ public class PanneauDessin extends JPanel{
 	public void ajouterVueForme(VueForme vueForme) {
 		getVueFormes().add(vueForme);
 		System.out.println(this.getVueFormes().size());
+
 	
 	}
 	
@@ -96,6 +99,18 @@ public class PanneauDessin extends JPanel{
 
 	public void setCouleurCourante(Color couleurCourante) {
 		this.couleurCourante = couleurCourante;
+	}
+
+
+	public boolean getModeRemplissage() {
+		return modeRemplissage;
+	}
+
+
+	public void setModeRemplissage(boolean modeRemplissage) {
+		this.modeRemplissage = modeRemplissage;
 	}	
+	
+	
 	
 }

@@ -5,8 +5,11 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 import fr.eseo.poo.projet.artiste.modele.Coordonnees;
+import fr.eseo.poo.projet.artiste.modele.Remplissable;
 
-public class Ellipse extends Forme{
+public class Ellipse extends Forme implements Remplissable{
+
+	private boolean estRempli;
 
 	public Ellipse() {
 		this(new Coordonnees(), LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT);
@@ -24,6 +27,7 @@ public class Ellipse extends Forme{
 		setPosition(coordonnees);
 		setLargeur(largeur);
 		setHauteur(hauteur);
+		setRempli(false);
 	}
 	
 	@Override
@@ -65,7 +69,8 @@ public class Ellipse extends Forme{
         }
 		
 		
-		return "["+ this.getClass().getSimpleName() +"] : " + pos + " " + dim + " " + perimetre + " " + aire + " " + couleur;
+		String firstPart = "["+ this.getClass().getSimpleName() + (estRempli() ? "-Rempli" : "") +"] : " + pos + " " ;
+		return firstPart + dim + " " + perimetre + " " + aire + " " + couleur;
 	}
 
 	@Override
@@ -73,6 +78,7 @@ public class Ellipse extends Forme{
 		// TODO Auto-generated method stub
 		return Math.PI * (getHauteur() /2) * (getLargeur()/2);
 	}
+
 
 	@Override
 	public double perimetre() {
@@ -119,5 +125,16 @@ public class Ellipse extends Forme{
 		return new Coordonnees(getPosition().getAbscisse() + (getLargeur() / 2.0), getPosition().getOrdonnee() + (getHauteur() / 2.0));
 	}
 	
+	@Override
+	public boolean estRempli() {
+		
+		return this.estRempli;
+	}
+
+	@Override
+	public void setRempli(boolean modeRemplissage) {
+		this.estRempli = modeRemplissage;
+		
+	}
 
 }

@@ -6,6 +6,8 @@ import java.util.Locale;
 
 public class Coordonnees {
 
+	public static final double EPSILON = 1e-2;
+	
 	public static final double ABSCISSE_PAR_DEFAUT = 0;
 	public static final double ORDONNEE_PAR_DEFAUT = 0;
 
@@ -68,8 +70,8 @@ public class Coordonnees {
 	 * @return la distance entre la coordonnées et la coordonnée donnée en argument
 	 */
 	public double distanceVers(Coordonnees coord) {
-		return  (double) Math.round((Math.sqrt(Math.pow(coord.getAbscisse() - this.getAbscisse(), 2)
-				+ Math.pow(coord.getOrdonnee() - this.getOrdonnee(), 2))) * 1000) / 1000;
+		return (Math.sqrt(Math.pow(coord.getAbscisse() - this.getAbscisse(), 2)
+				+ Math.pow(coord.getOrdonnee() - this.getOrdonnee(), 2)));
 	}
 
 	/**
@@ -106,18 +108,19 @@ public class Coordonnees {
 	
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (!(obj instanceof Coordonnees)) {
+        	return false;
+        }
+		
+		if (this == obj) {
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Coordonnees other = (Coordonnees) obj;
-		if (Double.doubleToLongBits(abscisse) != Double.doubleToLongBits(other.abscisse))
-			return false;
-		if (Double.doubleToLongBits(ordonnee) != Double.doubleToLongBits(other.ordonnee))
-			return false;
-		return true;
+		}
+        
+        Coordonnees that = (Coordonnees) obj;
+
+        return Math.abs(that.getAbscisse() - getAbscisse()) <= EPSILON &&
+                Math.abs(that.getOrdonnee() - getOrdonnee()) <= EPSILON;
+
 	}
 	
 	
